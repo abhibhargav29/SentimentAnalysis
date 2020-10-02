@@ -6,7 +6,8 @@ def get_bit(n,k):
         return 1
     return 0
 
-#To count number of 1's in binary representation 
+#To count number of 1's in binary representation
+#Brian-Kernningham Algorithm
 def countSetBits(n):
     cnt=0
     while(n>0):
@@ -37,7 +38,10 @@ def twoOddOccurences(arr, n):
 
     for i in range(1,n):
         xor = xor^arr[i]
-
+    #This xor is nothing but x^y
+    
+    #set_bit is the rightmost set bit in xor
+    #A set bit in xor means that bit is different for x and y
     set_bit= xor & ~(xor-1)
     for i in range(n):
         if(arr[i] & set_bit):
