@@ -6,9 +6,14 @@ the best model. We already have train, cross validate and test data seperately, 
 Data Extraction: The data is present in txt format and the columns are seperated by "  ". Also this data is for another task that is emotion intensity prediction, but we
 are gonna use it for emotion detection so we need to make some changes like not selecting very less intense emotions, for every emotion we use different intensity to filter out 
 based on data(This is done by manually looking at data). Finally the data is stored into a data frame with two columns "text" and "emotion". We have three data frames train, test 
-and cross validate.
+and cross validate. Also we encode the class labels(angry->0, fear->1, joy->2, sadness->3).
 
-Data Cleaning: 
+Data Cleaning: Removal of stop words, stemming, removal of tags and extra characters all is done in this step. By the end of this step we have two different types of data frames, 
+one is for word 2 vec and another for bag of words. They are different because word to vec takes list of list of words as input while bag of words takes list of sentences as 
+input.
+
+Text Vectorization: We do bag of words and word2vec vectorization of text. Normalization of both vectorized features is also done in this very step. We now have our whole data
+in form of feature matrix and class label array that are numpy arrays and can be directly fed to the models.
 
 Data: WASSA-2017 Shared Task on Emotion Intensity. Saif M. Mohammad and Felipe Bravo-Marquez. In Proceedings of the EMNLP 2017 Workshop on Computational Approaches to          
       Subjectivity, Sentiment, and Social Media (WASSA), September 2017, Copenhagen, Denmark, BibTex
