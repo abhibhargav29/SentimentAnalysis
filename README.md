@@ -6,9 +6,9 @@ the best model. We already have train, cross validate and test data seperately, 
 
 <ins>Data Extraction</ins>: 
 The data is present in txt format and the columns are seperated by "  ". Also this data is for another task that is emotion intensity prediction, but we
-are gonna use it for emotion detection so we need to make some changes like not selecting very less intense emotions, for every emotion we use different intensity to filter out 
-based on data(This is done by manually looking at data). Finally the data is stored into a data frame with two columns "text" and "emotion". We have three data frames train, test 
-and cross validate. Also we encode the class labels(angry->0, fear->1, joy->2, sadness->3).
+are gonna use it for emotion detection so we need to make some changes like not selecting very less intense emotions, for every emotion we use intensity>0.4 to filter out 
+the data. Finally the data is stored into a data frame with two columns "text" and "emotion". We have three data frames train, test and cross validate. Also we encode the class 
+labels(angry->0, fear->1, joy->2, sadness->3).
 
 <ins>Data Cleaning</ins>: 
 Removal of stop words, stemming, removal of tags and extra characters all is done in this step. By the end of this step we have two different types of data frames, 
@@ -22,8 +22,14 @@ in form of feature matrix and class label array that are numpy arrays and can be
 <ins>Modelling</ins>: 
 We have used KNN(word2vec), Logistic Regression(bag of words), Naive Bayes(bag of words), Random forest(word2vec), Linear SVM(word2vec) and Linear SVM(bag of words). 
 
+## FinalModel.py
+This file has the final model trained on all of the data(train, cross validate and test) with the best model and hyperparameter obtained after analysis from the ipython notebook
+It dumps the model into pickle file which can now be used in production directly in a flask framework or in a tkinter GUI.
 
-<ins>Data</ins>: 
+## Data 
+The data is already partitioned into train, test and cv. It is present as text file.
+
+<ins>Referred from:</ins>
 WASSA-2017 Shared Task on Emotion Intensity. Saif M. Mohammad and Felipe Bravo-Marquez. In Proceedings of the EMNLP 2017 Workshop on Computational Approaches to          
 Subjectivity, Sentiment, and Social Media (WASSA), September 2017, Copenhagen, Denmark, BibTex
 Link - http://saifmohammad.com/WebPages/EmotionIntensity-SharedTask.html
