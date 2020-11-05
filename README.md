@@ -1,7 +1,7 @@
-# Sentiment Analysis using Text
+# Sentiment Analysis Using Text
 
-## SentimentAnalysis.py
-The sentiment Analysis python notebook covers all the data extraction, data cleaning, vectorization of text and modelling to find out the best means of vectorization and
+## Analysis
+This forder has the ipython notebook that covers all the data extraction, data cleaning, vectorization of text and modelling to find out the best means of vectorization and
 the best model. We already have train, cross validate and test data seperately, which we will use in training, hyperparameter tuning and model selection respectively.
 
 <ins>Data Extraction</ins>: 
@@ -22,9 +22,12 @@ in form of feature matrix and class label array that are numpy arrays and can be
 <ins>Modelling</ins>: 
 We have used KNN(word2vec), Logistic Regression(bag of words), Naive Bayes(bag of words), Random forest(word2vec), Linear SVM(word2vec) and Linear SVM(bag of words). 
 
-## FinalModel.py
-This file has the final model trained on all of the data(train, cross validate and test) with the best model and hyperparameter obtained after analysis from the ipython notebook
-It dumps the model into pickle file which can now be used in production directly in a flask framework or in a tkinter GUI.
+## Final Model
+This folder has the py file where final model is trained on all of the data(train, cross validate and test) with the best model and hyperparameter obtained after analysis from 
+the ipython notebook. We user Linear SVM with bag of words vectorization and C=10 as the Analysis indicated it to be the best performer. It dumps the model into pickle file 
+which can now be used in production directly in a flask framework or in a tkinter GUI. We dump the bag of words model, main model and data all into a single pickle file as 
+tuple object, we need all of them to allow for dynamic learning of model during the time user uses the model. We also dump our set of stopwords and stemmer so we do not need 
+nltk library in the main interface. 
 
 ## Data 
 The data is already partitioned into train, test and cv. It is present as text file.
