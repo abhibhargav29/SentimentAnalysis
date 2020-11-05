@@ -158,7 +158,7 @@ while(True):
         word=word.lower()
         if(word not in stop):
             word = sno.stem(word)
-            filtered_text=" "+word
+            filtered_text+=" "+word
 
     X = normalize(bow_model.transform([filtered_text])).tocsr()
     Y = finalModel.predict(X)
