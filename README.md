@@ -24,10 +24,15 @@ We have used KNN(word2vec), Logistic Regression(bag of words), Naive Bayes(bag o
 
 ## Final Model
 This folder has the py file where final model is trained on all of the data(train, cross validate and test) with the best model and hyperparameter obtained after analysis from 
-the ipython notebook. We user Linear SVM with bag of words vectorization and C=10 as the Analysis indicated it to be the best performer. It dumps the model into pickle file 
-which can now be used in production directly in a flask framework or in a tkinter GUI. We dump the bag of words model, main model and data all into a single pickle file as 
-tuple object, we need all of them to allow for dynamic learning of model during the time user uses the model. We also dump our set of stopwords and stemmer so we do not need 
-nltk library in the main interface. 
+the ipython notebook. We user Linear SVM with bag of words vectorization and C=10 as the Analysis indicated it to be the best performer. It dumps the model into pickle file in 
+the GUI folder which can now be used in production directly in our tkinter GUI. 
+
+<ins>MainPickle.pkl</ins>:
+We dump the bag of words model, main model and data all into a single pickle file as a tuple object, we need all of them to allow for dynamic learning of model during the time 
+user uses the model.
+
+<ins>StopStem.pkl</ins>:
+We also dump our set of stopwords and stemmer so we do not need nltk library in the main interface. 
 
 ## Data 
 The data is already partitioned into train, test and cv. It is present as text file.
