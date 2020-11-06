@@ -10,12 +10,19 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.preprocessing import normalize
 
 from sklearn.svm import LinearSVC
-from sklearn.metrics import accuracy_score
 
+import pickle
 
 #Train Data
-trainDf =  pd.read_csv('Train.txt', sep='	', names=["id","text","emotion","intensity"], engine='python')
-trainDf=trainDf.drop("id",axis=1)
+#Try statement to handle if the parent directory is the working folder in vs code
+flag=0
+try:
+    trainDf =  pd.read_csv('../Data/Train.txt', sep='	', names=["id","text","emotion","intensity"], engine='python')
+    trainDf=trainDf.drop("id",axis=1)
+except:
+    trainDf =  pd.read_csv('Data/Train.txt', sep='	', names=["id","text","emotion","intensity"], engine='python')
+    trainDf=trainDf.drop("id",axis=1)
+    flag=1
 
 AngerDf = trainDf[trainDf["emotion"]=="anger"].drop("emotion",axis=1)
 AngerDf = AngerDf[AngerDf["intensity"]>=0.4]
@@ -38,8 +45,13 @@ print()
 print("Shape of train dataset:",trainDf.shape)
 
 #Cross Validation Data
-crossValDf =  pd.read_csv('CrossValidate.txt', sep='	', names=["id","text","emotion","intensity"], engine='python')
-crossValDf=crossValDf.drop("id",axis=1)
+#Try statement to handle if the parent directory is the working folder in vs code
+try:
+    crossValDf =  pd.read_csv('../Data/CrossValidate.txt', sep='	', names=["id","text","emotion","intensity"], engine='python')
+    crossValDf=crossValDf.drop("id",axis=1)
+except:
+    crossValDf =  pd.read_csv('Data/CrossValidate.txt', sep='	', names=["id","text","emotion","intensity"], engine='python')
+    crossValDf=crossValDf.drop("id",axis=1)
 
 AngerDf = crossValDf[crossValDf["emotion"]=="anger"].drop("emotion",axis=1)
 AngerDf = AngerDf[AngerDf["intensity"]>0.4]
@@ -61,8 +73,13 @@ crossValDf = pd.concat([AngerDf,FearDf,JoyDf,SadDf],ignore_index=True)
 print("Shape of CV data:",crossValDf.shape)
 
 #Test Data
-testDf =  pd.read_csv('Test.txt', sep='	', names=["id","text","emotion","intensity"], engine='python')
-testDf=testDf.drop("id",axis=1)
+#Try statement to handle if the parent directory is the working folder in vs code
+try:
+    testDf =  pd.read_csv('../Data/Test.txt', sep='	', names=["id","text","emotion","intensity"], engine='python')
+    testDf=testDf.drop("id",axis=1)
+except:
+    testDf =  pd.read_csv('Data/Test.txt', sep='	', names=["id","text","emotion","intensity"], engine='python')
+    testDf=testDf.drop("id",axis=1)
 
 AngerDf = testDf[testDf["emotion"]=="anger"].drop("emotion",axis=1)
 AngerDf = AngerDf[AngerDf["intensity"]>=0.4]
@@ -140,34 +157,20 @@ print()
 finalModel = LinearSVC(C = 10, dual=False)
 finalModel.fit(X, y)
 
-#New Prediction
-while(True):
-    user_text = input("Enter text to predict(Enter 'e' to exit): ")
-    if(user_text=="e"):
-        print("Bye")
-        break
-    tags = re.compile("^@[a-zA-Z_]*")
-    user_text = re.sub(tags," ",user_text)
-    hashtags = re.compile("#|\*")
-    user_text = re.sub(hashtags,"",user_text)
-    extraCharacters = re.compile("[^a-zA-Z]")
-    user_text = re.sub(extraCharacters," ",user_text)
-    
-    filtered_text=""
-    for word in user_text.split():
-        word=word.lower()
-        if(word not in stop):
-            word = sno.stem(word)
-            filtered_text+=" "+word
+#Dump Models, Data, etc
+path = ""
+if(flag==0):
+    path1 = "../GUI/MainPickle.pkl"
+    path2 = "../GUI/StopStem.pkl"
+else:
+    path1 = "GUI/MainPickle.pkl"
+    path2 = "GUI/StopStem.pkl"
 
-    X = normalize(bow_model.transform([filtered_text])).tocsr()
-    Y = finalModel.predict(X)
-    Y = Y[0]
-    if(Y==0):
-        print("Anger")
-    elif(Y==1):
-        print("Fear")
-    elif(Y==2):
-        print("Joy")
-    else:
-        print("Sadness")
+Tuple_Obj1 = (finalModel, bow_model, CleanedData)
+Tuple_Obj2 = (stop, sno)
+
+with open(path1,"wb") as file1:
+    pickle.dump(Tuple_Obj1, file1)
+
+with open(path2,"wb") as file2:
+    pickle.dump(Tuple_Obj2, file2)
