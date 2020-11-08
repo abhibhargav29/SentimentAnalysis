@@ -20,7 +20,8 @@ We do bag of words and word2vec vectorization of text. Normalization of both vec
 in form of feature matrix and class label array that are numpy arrays and can be directly fed to the models.
 
 <ins>Modelling</ins>: 
-We have used KNN(word2vec), Logistic Regression(bag of words), Naive Bayes(bag of words), Random forest(word2vec), Linear SVM(word2vec) and Linear SVM(bag of words). 
+We have used KNN(word2vec), Logistic Regression(bag of words), Naive Bayes(bag of words), Random forest(word2vec), Linear SVM(word2vec), Linear SVM(bag of words) and stacking
+of the three models(Logistic Regression, Naive Bayes and SVM). LinearSVM with bag of words gace the best accuracy and confusion matrix so we will use it in the final model.
 
 ## Final Model
 This folder has the py file where final model is trained on all of the data(train, cross validate and test) with the best model and hyperparameter obtained after analysis from 
@@ -34,7 +35,16 @@ user uses the model.
 <ins>StopStem.pkl</ins>:
 We also dump our set of stopwords and stemmer so we do not need nltk library in the main interface. 
 
-## Data 
+## GUI
+This folder has has our main interface coded into the GUI window python file. We load the pickle objects into this file and use tkinter for the front interface. The interface 
+can be used to simply enter text and then predict, it asks for a confirmation if the prediction was right, if not, it asks for the correct prediction and on telling it that
+it saves it in a list. When user presses the save button on main window, model is fitted to all the entries of that session along with previous data and the data is also updated
+then we restart the application and now it remembers the words told to it previously.
+
+<ins>background.jpg:</ins>
+The backfround image for gui is taken from Fone Walls images: https://www.fonewalls.com/720x1280-wallpapers/720x1280-background-hd-wallpaper-375/
+
+## Raw Data 
 The data is already partitioned into train, test and cv. It is present as text file.
 
 <ins>Referred from:</ins>
