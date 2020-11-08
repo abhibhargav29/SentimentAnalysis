@@ -41,13 +41,14 @@ can be used to simply enter text and then predict, it asks for a confirmation if
 it saves it in a list. When user presses the save button on main window, model is fitted to all the entries of that session along with previous data and the data is also updated
 then we restart the application and now it remembers the words told to it previously.
 
-<ins>background.jpg:</ins>
-The backfround image for gui is taken from Fone Walls images: https://www.fonewalls.com/720x1280-wallpapers/720x1280-background-hd-wallpaper-375/
+<ins>Background:</ins>
+The background image for gui is taken from Fone Walls images.<br>
+Link:https://www.fonewalls.com/720x1280-wallpapers/720x1280-background-hd-wallpaper-375/
 
 ## Raw Data 
 The data is already partitioned into train, test and cv. It is present as text file.
 
 <ins>Referred from:</ins>
 WASSA-2017 Shared Task on Emotion Intensity. Saif M. Mohammad and Felipe Bravo-Marquez. In Proceedings of the EMNLP 2017 Workshop on Computational Approaches to          
-Subjectivity, Sentiment, and Social Media (WASSA), September 2017, Copenhagen, Denmark, BibTex
-Link - http://saifmohammad.com/WebPages/EmotionIntensity-SharedTask.html
+Subjectivity, Sentiment, and Social Media (WASSA), September 2017, Copenhagen, Denmark, BibTex.<br>
+Link:http://saifmohammad.com/WebPages/EmotionIntensity-SharedTask.html
