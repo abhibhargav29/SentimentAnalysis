@@ -2,7 +2,7 @@
 
 ## Requirements
 <ins>Softwares:</ins>
-Python 3, Jupyter notebook(for ipynb file), VS code(or any other editor)
+Python3, Jupyter notebook(for ipynb file), VS code(or any other code editor)
 
 <ins>Libraries:</ins>
 Pandas, Numpy, Matplotlib, nltk, re, tqdm, Sklearn, gensim, pickle, tkinter, pillow(PIL)
@@ -56,6 +56,10 @@ Link:https://www.fonewalls.com/720x1280-wallpapers/720x1280-background-hd-wallpa
 The data is already partitioned into train, test and cv. It is present as text file.
 
 <ins>Referred from:</ins>
-WASSA-2017 Shared Task on Emotion Intensity. Saif M. Mohammad and Felipe Bravo-Marquez. In Proceedings of the EMNLP 2017 Workshop on Computational Approaches to          
-Subjectivity, Sentiment, and Social Media (WASSA), September 2017, Copenhagen, Denmark, BibTex.<br>
+WASSA-2017 Shared Task on Emotion Intensity. Saif M. Mohammad and Felipe Bravo-Marquez. In Proceedings of the EMNLP 2017 Workshop on Computational Approaches to Subjectivity, 
+Sentiment, and Social Media (WASSA), September 2017, Copenhagen, Denmark, BibTex.<br>
 Link:http://saifmohammad.com/WebPages/EmotionIntensity-SharedTask.html
+
+## Runnning and Using Final APP
+To actually run the application, you will need all the files in GUI folder and the libraries mentioned in the requirements section, then you can run the GUIWindow.py file in any
+python interpreter and you will be able to use the application.
