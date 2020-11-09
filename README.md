@@ -1,5 +1,12 @@
 # Sentiment Analysis Using Text
 
+## Requirements
+<ins>Softwares:</ins>
+Python 3, Jupyter notebook(for ipynb file), VS code(or any other editor)
+
+<ins>Libraries:</ins>
+Pandas, Numpy, Matplotlib, nltk, re, tqdm, Sklearn, gensim, pickle, tkinter, pillow(PIL)
+
 ## Analysis
 This forder has the ipython notebook that covers all the data extraction, data cleaning, vectorization of text and modelling to find out the best means of vectorization and
 the best model. We already have train, cross validate and test data seperately, which we will use in training, hyperparameter tuning and model selection respectively.
