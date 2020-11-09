@@ -2,7 +2,7 @@
 
 ## Requirements
 <ins>Softwares:</ins>
-Python3, Jupyter notebook(for ipynb file), VS code(or any other code editor)
+Python3, Jupyter notebook, VS code(or any other code editor)
 
 <ins>Libraries:</ins>
 Pandas, Numpy, Matplotlib, nltk, re, tqdm, Sklearn, gensim, pickle, tkinter, pillow(PIL)
@@ -62,4 +62,6 @@ Link:http://saifmohammad.com/WebPages/EmotionIntensity-SharedTask.html
 
 ## Runnning and Using Final APP
 To actually run the application, you will need all the files in GUI folder and the libraries mentioned in the requirements section, then you can run the GUIWindow.py file in any
-python interpreter and you will be able to use the application.
+python interpreter and you will be able to use the application. The app window has a text field and two buttons, you can enter your text in the text field and press ok to get a 
+prediction, the program will ask you for a confimation if the prediction is correct, if it is wrong you may press no and this will redirect to a window where you can enter the 
+correct answer, then that answer will be recorded and you will be returned to main window. Just before closing the app you have to click on save to train your model on all the new data entered by you and whenever you restart it will remember.
