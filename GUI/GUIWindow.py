@@ -39,6 +39,7 @@ def predict():
 
     text = user_text.get()
     
+    #Clean user entered text
     tags = re.compile("^@[a-zA-Z_]*")
     text = re.sub(tags," ",text)
     hashtags = re.compile("#|\*")
@@ -52,6 +53,7 @@ def predict():
             word = sno.stem(word)
             filtered_text+=" "+word
 
+    #Tranform and predict
     X = normalize(bow_model.transform([filtered_text])).tocsr()
     emotionDict = {0:"anger", 1:"fear", 2:"joy", 3:"sad", "anger":0, "fear":1, "joy":2, "sad":3}
     Y = Model.predict(X)
@@ -60,6 +62,7 @@ def predict():
     confirm = messagebox.askquestion(f"{res}",f"Do you feel {res}?")
     if(confirm=="yes"):
         return
+    #Handle the wrong prediction
     else:
         def commit():
             user_entries.append(filtered_text)
