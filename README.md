@@ -1,10 +1,10 @@
 # Sentiment Analysis Using Text
 
 ## Requirements
-<ins>Softwares:</ins>
+<ins>Softwares</ins>:
 Python3, Jupyter notebook, VS code(or any other code editor)
 
-<ins>Libraries:</ins>
+<ins>Libraries</ins>:
 Pandas, Numpy, Matplotlib, nltk, re, tqdm, Sklearn, gensim, pickle, tkinter, pillow(PIL)
 
 ## Analysis
@@ -63,7 +63,7 @@ it saves it in a list. When user presses the save button on main window, model i
 then we restart the application and now it remembers the words told to it previously.
 </p>
 
-<ins>Background:</ins>
+<ins>Background</ins>:
 The background image for gui is taken from Fone Walls images.<br>
 Link:https://www.fonewalls.com/720x1280-wallpapers/720x1280-background-hd-wallpaper-375/
 
@@ -71,10 +71,10 @@ Link:https://www.fonewalls.com/720x1280-wallpapers/720x1280-background-hd-wallpa
 The data is already partitioned into train, test and cv. It is present as text file.
 
 <p align="justify">
-<ins>Referred from:</ins>
+<ins>Referred from</ins>:
 WASSA-2017 Shared Task on Emotion Intensity. Saif M. Mohammad and Felipe Bravo-Marquez. In Proceedings of the EMNLP 2017 Workshop on Computational Approaches to Subjectivity, 
-Sentiment, and Social Media (WASSA), September 2017, Copenhagen, Denmark, BibTex.<br>
-Link:http://saifmohammad.com/WebPages/EmotionIntensity-SharedTask.html
+Sentiment, and Social Media (WASSA), September 2017, Copenhagen, Denmark, BibTex.
+Link: http://saifmohammad.com/WebPages/EmotionIntensity-SharedTask.html
 </p>
 
 ## Runnning and Using Final APP
