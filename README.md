@@ -8,14 +8,18 @@ Python3, Jupyter notebook, VS code(or any other code editor)
 Pandas, Numpy, Matplotlib, nltk, re, tqdm, Sklearn, gensim, pickle, tkinter, pillow(PIL)
 
 ## Analysis
-This forder has the ipython notebook that covers all the data extraction, data cleaning, vectorization of text and modelling to find out the best means of vectorization and
+<p align="justify">
+This folder has the ipython notebook that covers all the data extraction, data cleaning, vectorization of text and modelling to find out the best means of vectorization and
 the best model. We already have train, cross validate and test data seperately, which we will use in training, hyperparameter tuning and model selection respectively.
+</p>
 
-<ins>Data Extraction</ins>: 
-The data is present in txt format and the columns are seperated by "  ". Also this data is for another task that is emotion intensity prediction, but we
-are gonna use it for emotion detection so we need to make some changes like not selecting very less intense emotions, for every emotion we use intensity>0.4 to filter out 
-the data. Finally the data is stored into a data frame with two columns "text" and "emotion". We have three data frames train, test and cross validate. Also we encode the class 
-labels(angry->0, fear->1, joy->2, sadness->3).
+<ins>Data Extraction</ins>:
+<p align="justify">
+The data is present in txt format and the columns are seperated by "  ". Also this data is for another task that is emotion intensity prediction, but we are gonna use it for 
+emotion detection so we need to make some changes like not selecting very less intense emotions, for every emotion we use intensity>0.4 to filter out the data. Finally the data 
+is stored into a data frame with two columns "text" and "emotion". We have three data frames train, test and cross validate. Also we encode the class labels(angry->0, fear->1, 
+joy->2, sadness->3).
+</p>
 
 <ins>Data Cleaning</ins>: 
 Removal of stop words, stemming, removal of tags and extra characters all is done in this step. By the end of this step we have two different types of data frames, 
