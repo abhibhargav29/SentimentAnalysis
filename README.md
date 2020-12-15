@@ -13,29 +13,28 @@ This folder has the ipython notebook that covers all the data extraction, data c
 the best model. We already have train, cross validate and test data seperately, which we will use in training, hyperparameter tuning and model selection respectively.
 </p>
 
-<ins>Data Extraction</ins>:
 <p align="justify">
+<ins>Data Extraction</ins>:
 The data is present in txt format and the columns are seperated by "  ". Also this data is for another task that is emotion intensity prediction, but we are gonna use it for 
 emotion detection so we need to make some changes like not selecting very less intense emotions, for every emotion we use intensity>0.4 to filter out the data. Finally the data 
 is stored into a data frame with two columns "text" and "emotion". We have three data frames train, test and cross validate. Also we encode the class labels(angry->0, fear->1, 
 joy->2, sadness->3).
 </p>
 
+<p align="justify">
 <ins>Data Cleaning</ins>:
-<p align="justify">
-Removal of stop words, stemming, removal of tags and extra characters all is done in this step. By the end of this step we have two different types of data frames, 
-one is for word 2 vec and another for bag of words. They are different because word to vec takes list of list of words as input while bag of words takes list of sentences as 
-input.
+Removal of stop words, stemming, removal of tags and extra characters all is done in this step. By the end of this step we have two different types of data frames, one is for 
+word 2 vec and another for bag of words. They are different because word to vec takes list of list of words as input while bag of words takes list of sentences as input.
 </p>
 
+<p align="justify">
 <ins>Text Vectorization</ins>: 
-<p align="justify">
-We do bag of words and word2vec vectorization of text. Normalization of both vectorized features is also done in this very step. We now have our whole data
-in form of feature matrix and class label array that are numpy arrays and can be directly fed to the models.
+We do bag of words and word2vec vectorization of text. Normalization of both vectorized features is also done in this very step. We now have our whole data in form of feature 
+matrix and class label array that are numpy arrays and can be directly fed to the models.
 </p>
-
-<ins>Modelling</ins>: 
+ 
 <p align="justify">
+<ins>Modelling</ins>:
 We have used KNN(word2vec), Logistic Regression(bag of words), Naive Bayes(bag of words), Random forest(word2vec), Linear SVM(word2vec), Linear SVM(bag of words) and stacking
 of the three models(Logistic Regression, Naive Bayes and SVM). LinearSVM with bag of words gace the best accuracy and confusion matrix so we will use it in the final model.
 </p>
@@ -47,8 +46,8 @@ the ipython notebook. We user Linear SVM with bag of words vectorization and C=1
 the GUI folder which can now be used in production directly in our tkinter GUI. 
 </p>
 
-<ins>MainPickle.pkl</ins>:
 <p align="justify">
+<ins>MainPickle.pkl</ins>:
 We dump the bag of words model, main model and data all into a single pickle file as a tuple object, we need all of them to allow for dynamic learning of model during the time 
 user uses the model.
 </p>
@@ -71,10 +70,12 @@ Link:https://www.fonewalls.com/720x1280-wallpapers/720x1280-background-hd-wallpa
 ## Raw Data 
 The data is already partitioned into train, test and cv. It is present as text file.
 
+<p align="justify">
 <ins>Referred from:</ins>
 WASSA-2017 Shared Task on Emotion Intensity. Saif M. Mohammad and Felipe Bravo-Marquez. In Proceedings of the EMNLP 2017 Workshop on Computational Approaches to Subjectivity, 
 Sentiment, and Social Media (WASSA), September 2017, Copenhagen, Denmark, BibTex.<br>
 Link:http://saifmohammad.com/WebPages/EmotionIntensity-SharedTask.html
+</p>
 
 ## Runnning and Using Final APP
 <p align="justify">
