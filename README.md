@@ -29,8 +29,8 @@ word 2 vec and another for bag of words. They are different because word to vec 
 
 <p align="justify">
 <ins>Text Vectorization</ins>: 
-We do bag of words and word2vec vectorization of text. Normalization of both vectorized features is also done in this very step. We now have our whole data in form of feature 
-matrix and class label array that are numpy arrays and can be directly fed to the models.
+We do bag of words and word2vec vectorization of text, using different vectorization for different models. Normalization of both vectorized features is also done in this very 
+step. We now have our whole data in form of feature matrix and class label array that are numpy arrays and can be directly fed to the models.
 </p>
  
 <p align="justify">
@@ -65,7 +65,7 @@ then we restart the application and now it remembers the words told to it previo
 
 <ins>Background</ins>:
 The background image for gui is taken from Fone Walls images.<br>
-Link:https://www.fonewalls.com/720x1280-wallpapers/720x1280-background-hd-wallpaper-375/
+<ins>Link</ins>: https://www.fonewalls.com/720x1280-wallpapers/720x1280-background-hd-wallpaper-375/
 
 ## Raw Data 
 The data is already partitioned into train, test and cv. It is present as text file.
