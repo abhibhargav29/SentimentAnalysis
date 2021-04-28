@@ -36,7 +36,7 @@ step. We now have our whole data in form of feature matrix and class label array
 <p align="justify">
 <ins>Modelling</ins>:
 We have used KNN(word2vec), Logistic Regression(bag of words), Naive Bayes(bag of words), Random forest(word2vec), Linear SVM(word2vec), Linear SVM(bag of words) and stacking
-of the three models(Logistic Regression, Naive Bayes and SVM). LinearSVM with bag of words gace the best accuracy and confusion matrix so we will use it in the final model.
+of the three models(Logistic Regression, Naive Bayes and SVM). LinearSVM with bag of words gave the best accuracy and confusion matrix so we will use it in the final model.
 </p>
 
 ## Final Model
