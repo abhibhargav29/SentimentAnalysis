@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block head %} <title>Sentiment Prediction</title> {% endblock %}
+
+{% block body %}
+    <main role="main">
+    <div class="jumbotron">
+        <div class="container">
+        <h2>What do you feel:</h2><br>
+        
+        <form action="/edit" method="POST" onsubmit="showAlert()">
+            <div class="form-group">
+                <select name = "Sentiment" class="form-control" style="font-size: large;">
+                    <option value = "sad" selected>Sad</option>
+                    <option value = "joy">Joy</option>
+                    <option value = "anger">Anger</option>
+                    <option value = "fear">Fear</option>
+                </select>
+            </div><br>
+            <button type="submit" class="btn btn-primary mb-2 float-right">Change</button>
+        </form>
+        
+        </div>
+    </div>
+    </main>
+    <script>
+        function showAlert() {
+          alert("Okay, i will try to remember this next time");
+        }
+    </script>
+{% endblock %}

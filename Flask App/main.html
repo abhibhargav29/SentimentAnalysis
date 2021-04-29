@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block head %} <title>Sentiment Prediction</title> {% endblock %}
+
+{% block body %}
+
+    <main role="main">
+    <div class="jumbotron">
+        <div class="container">
+        <h1>Sentiment Prediction:</h1><br>
+        
+        <form action="/" method="POST">
+            <div class="form-group">
+                <textarea class="form-control" name="text" rows="3" placeholder="Enter Text"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary mb-2 float-right">Predict</button>
+        </form>
+        
+        </div>
+    </div>
+    </main>
+    {% if result not in [""] %}
+        <div class="jumbotron">
+        <div class="container">
+        <h2>
+        Are you feeling {{result}}?
+        </h2>
+        <a class="btn btn-primary btn-sm" style="font-size: large;" href="/">Yes</a>
+        <a class="btn btn-primary btn-sm" style="font-size: large;" href="/edit">No</a>
+        </div>
+        </div>
+    {% else %}
+        <hr><hr><hr><br><br><br><br><br><br><br><br>
+    {% endif %}
+
+{% endblock %}
+
+{% block mainfooter %}
+    <footer class="page-footer">
+        <div class="footer-copyright text-center py-3">Contact Us
+            <br>
+            <a href="https://github.com/abhibhargav29" style="color:white" target="_blank">Github</a>
+            •
+            <a href="https://www.facebook.com/abhi.bhargav.29/" style="color:white" target="_blank">Facebook</a>
+            •
+            <a href="https://www.linkedin.com/in/abhibhargav29-48196/" style="color:white" target="_blank">LinkedIn</a>
+        </div>
+    </footer>
+{% endblock %}
