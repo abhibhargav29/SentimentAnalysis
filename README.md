@@ -42,7 +42,7 @@ of the three models(Logistic Regression, Naive Bayes and SVM). LinearSVM with ba
 ## Final Model
 <p align="justify">
 This folder has the py file where final model is trained on all of the data(train, cross validate and test) with the best model and hyperparameter obtained after analysis from 
-the ipython notebook. We user Linear SVM with bag of words vectorization and C=10 as the Analysis indicated it to be the best performer. It dumps the model into pickle file in 
+the ipython notebook. We user Linear SVM with bag of words vectorization and C=10 as the analysis indicated it to be the best performer. It dumps the model into pickle file in 
 the GUI folder which can now be used in production directly in our tkinter GUI. 
 </p>
 
