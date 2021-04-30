@@ -67,6 +67,11 @@ then we restart the application and now it remembers the words told to it previo
 The background image for gui is taken from Fone Walls images.<br>
 <ins>Link</ins>: https://www.fonewalls.com/720x1280-wallpapers/720x1280-background-hd-wallpaper-375/
 
+## Flask App
+<p align="justify">
+This folder has the code for making a web app which will work similar to the tkinter app. You can see the deployed flask app at this site: https://sentiment-analysis29.herokuapp.com/
+ </p>
+
 ## Raw Data 
 The data is already partitioned into train, test and cv. It is present as text file.
 
