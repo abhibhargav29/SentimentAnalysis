@@ -10,6 +10,7 @@ import pickle
 import pandas
 
 #Load pickle files
+#Try and except for the case we open the whole project folder in VS Code
 flag=0 
 try:
     with open("MainPickle.pkl","rb") as file1:
